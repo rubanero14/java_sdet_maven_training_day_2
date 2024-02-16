@@ -18,7 +18,7 @@ public class Day1 extends Day1_Rajaruban_Works {
 		
 		printTableOfNine();
 		
-		launchBrowserUsingSelenium("https:www.google.com");
+		launchBrowserUsingSelenium("https://demo.guru99.com/test/radio.html");
 		
 		System.out.println(checkIsEvenOrOdd(99));
 		

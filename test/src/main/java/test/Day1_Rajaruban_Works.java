@@ -1,5 +1,9 @@
 package test;
+import java.util.*;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 class Day1_Rajaruban_Works {
@@ -86,6 +90,36 @@ class Day1_Rajaruban_Works {
 	 
         // Launch Website
         driver.get(url);
+        
+//        WebElement username = driver.findElement(By.id("email"));
+//        username.sendKeys("DDFJOSDHFS");
+//        driver.findElement(By.id("pass")).sendKeys("FSDGWERTW2313234");
+//        driver.findElement(By.name("login")).click();
+//        
+//        String error;
+//        
+//        try {
+//        	error = driver.findElement(By.className("_9ay7")).getText();
+//        } catch(Exception e) {
+//        	error = "Success.";
+//        }
+//        
+//        System.out.println(error);
+//        
+//        String userName;
+//        
+//    	if(error.contains("The email address")) {
+//    		System.out.println("Login failed.");
+//        } else {
+//        	userName = driver.findElement(By.cssSelector(".x1lliihq.x6ikm8r.x10wlt62.x1n2onr6")).getText();
+//        	System.out.println("Login passed: Logged in as " + userName);
+//        }
+    	
+    	List<WebElement> inputs = driver.findElements(By.name("webform"));
+    	for (WebElement input : inputs) {
+    		input.click();
+    		System.out.println(input);
+    	}
 	}
 	
 	protected static String checkIsEvenOrOdd(int val) {
