@@ -1,10 +1,13 @@
 package test;
+
 import java.util.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 class Day1_Rajaruban_Works {
 	int x, y;
@@ -91,8 +94,9 @@ class Day1_Rajaruban_Works {
         // Launch Website
         driver.get(url);
         
-//        WebElement username = driver.findElement(By.id("email"));
-//        username.sendKeys("DDFJOSDHFS");
+// 		// for facebook.com - input value injection and form action performing     
+//        WebElement userName = driver.findElement(By.id("email"));
+//        userName.sendKeys("DDFJOSDHFS");
 //        driver.findElement(By.id("pass")).sendKeys("FSDGWERTW2313234");
 //        driver.findElement(By.name("login")).click();
 //        
@@ -106,20 +110,56 @@ class Day1_Rajaruban_Works {
 //        
 //        System.out.println(error);
 //        
-//        String userName;
+//        String user;
 //        
-//    	if(error.contains("The email address")) {
+//    	  if(error.contains("The email address")) {
 //    		System.out.println("Login failed.");
 //        } else {
-//        	userName = driver.findElement(By.cssSelector(".x1lliihq.x6ikm8r.x10wlt62.x1n2onr6")).getText();
-//        	System.out.println("Login passed: Logged in as " + userName);
+//        	user = driver.findElement(By.cssSelector(".x1lliihq.x6ikm8r.x10wlt62.x1n2onr6")).getText();
+//        	System.out.println("Login passed: Logged in as " + user);
 //        }
-    	
-    	List<WebElement> inputs = driver.findElements(By.name("webform"));
-    	for (WebElement input : inputs) {
-    		input.click();
-    		System.out.println(input);
-    	}
+//    	
+//		// for https://demo.guru99.com/test/radio.html - Clicking of radio and checkbox element
+//    	List<WebElement> inputs = driver.findElements(By.name("webform"));
+//    	for (WebElement input : inputs) {
+//    		input.click();
+//    		System.out.println(input);
+//    	}
+//    	
+//        // for https://demo.guru99.com/test/newtours/register.php - selecting select element
+//        // clicking link element
+//        // performing actions sequentially
+//        Select select = new Select(driver.findElement(By.name("country")));
+//        select.selectByVisibleText("UNITED STATES");
+//        driver.findElement(By.linkText("Home")).click();
+//        Actions actions = new Actions(driver);
+//        actions.build().perform();
+        
+        // for https://demo.guru99.com/popup.php
+        // alert and pop up handling
+        WebElement link = driver.findElement(By.linkText("Click Here"));
+        link.click();
+        String MainWindow = driver.getWindowHandle();
+        
+        // to handle all new opened windows
+        Set<String> Windows = driver.getWindowHandles();
+        Iterator<String> Iterator = Windows.iterator();
+        System.out.println(MainWindow);
+        while(Iterator.hasNext()) {
+        	String ChildWindow = Iterator.next();  
+        	System.out.println(ChildWindow);
+        	if(!MainWindow.equalsIgnoreCase(ChildWindow)) {
+        		// Switching to child window
+        		driver.switchTo().window(ChildWindow);                                                                                       
+                driver.findElement(By.name("emailid")).sendKeys("googool@gmail.com");                			
+                driver.findElement(By.name("btnLogin")).click();			
+                             
+            	// Closing the Child Window.
+                driver.close();		
+        	}
+        }
+     	// Switching to Parent window i.e Main Window.
+        driver.switchTo().window(MainWindow);
 	}
 	
 	protected static String checkIsEvenOrOdd(int val) {
