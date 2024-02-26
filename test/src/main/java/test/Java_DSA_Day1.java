@@ -41,7 +41,7 @@ public class Java_DSA_Day1 {
 		printArr(new int[] {3, 2, 1, 10, 9});
 		printArr(numArr);
 		
-		int[] evenNumRemArr = {3, 2, 1, 10, 9, 4, 6, 7, 5};
+		int[] evenNumRemArr = {3, 2, 4, 7, 10, 6, 5};
 		int[] result = removeEvenInt(evenNumRemArr);
 		printArr(result);
 	}
