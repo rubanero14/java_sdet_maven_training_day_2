@@ -34,7 +34,5 @@ public class Day3_Rajaruban_Works {
 	 
         // Launch Website
         driver.get(url);
-        
-        
 	}
 }

@@ -152,8 +152,8 @@ class Day1_Rajaruban_Works {
         		// Switching to child window
         		driver.switchTo().window(ChildWindow);                                                                                       
                 driver.findElement(By.name("emailid")).sendKeys("googool@gmail.com");                			
-                driver.findElement(By.name("btnLogin")).click();			
-                             
+                driver.findElement(By.name("btnLogin")).click();
+                
             	// Closing the Child Window.
                 driver.close();		
         	}
