@@ -41,6 +41,21 @@ public class Java_DSA_Day1 {
 		return reversedArr;
 	}
 	
+	public static int findMin(int[] arr) {
+		// edge case
+		if(arr == null || arr.length == 0) {
+			throw new IllegalArgumentException("Invalid input");
+		}
+		
+		int min = arr[0];
+		for(int i : arr) {
+			if(i < min) {
+				min = i;
+			}
+		}
+		return min;
+	}
+	
 	public static void main(String[] args) {
 		int[] numArr = new int[5];
 		numArr[0] = 1;
@@ -54,7 +69,13 @@ public class Java_DSA_Day1 {
 		int[] evenNumRemArr = {3, 2, 4, 7, 10, 6, 5};
 		int[] result = removeEvenInt(evenNumRemArr);
 		printArr(result);
+		printArr(reverseArray(new int[] {3, 2, 1, 10, 9}));
+		printArr(reverseArray(numArr));
+		printArr(reverseArray(result));
 		printArr(reverseArray(evenNumRemArr));
+		
+		System.out.println(findMin(numArr));
+		System.out.println(findMin(null));
 	}
 
 }
