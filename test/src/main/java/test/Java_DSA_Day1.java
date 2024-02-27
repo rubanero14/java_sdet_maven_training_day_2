@@ -56,6 +56,22 @@ public class Java_DSA_Day1 {
 		return min;
 	}
 	
+	public static int findSecondMaxValue(int[] arr) {
+		int max = arr[0];
+		int secondMaxVal = arr[0];
+		
+		for(int i : arr) {
+			if(i > secondMaxVal && i < max) {
+				secondMaxVal = i;
+			}
+			if(i > max) {
+				secondMaxVal = max;
+				max = i;
+			}
+		}
+		return secondMaxVal;
+	}
+	
 	public static void main(String[] args) {
 		int[] numArr = new int[5];
 		numArr[0] = 1;
@@ -75,7 +91,12 @@ public class Java_DSA_Day1 {
 		printArr(reverseArray(evenNumRemArr));
 		
 		System.out.println(findMin(numArr));
-		System.out.println(findMin(null));
+		// System.out.println(findMin(null));
+		
+		System.out.println(findSecondMaxValue(numArr));
+		System.out.println(findSecondMaxValue(evenNumRemArr));
+		System.out.println(findSecondMaxValue(new int[] {3, 2, 1, 10, 9}));
+		System.out.println(findSecondMaxValue(new int[] {12, 34, 2, 34, 33, 1}));
 	}
 
 }
