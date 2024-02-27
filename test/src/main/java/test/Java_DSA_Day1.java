@@ -31,6 +31,16 @@ public class Java_DSA_Day1 {
 		return formattedArr;
 	}
 	
+	public static int[] reverseArray(int[] arr) {
+		int index = arr.length - 1;
+		int[] reversedArr = new int[arr.length];
+		for (int i : arr) {
+			reversedArr[index] = i;
+			index--;
+		}
+		return reversedArr;
+	}
+	
 	public static void main(String[] args) {
 		int[] numArr = new int[5];
 		numArr[0] = 1;
@@ -44,6 +54,7 @@ public class Java_DSA_Day1 {
 		int[] evenNumRemArr = {3, 2, 4, 7, 10, 6, 5};
 		int[] result = removeEvenInt(evenNumRemArr);
 		printArr(result);
+		printArr(reverseArray(evenNumRemArr));
 	}
 
 }
