@@ -3,13 +3,6 @@ package test;
 import java.util.Arrays;
 
 public class FindMissingNumber {
-	static void printArr(int[] arr) {
-		for(int i : arr) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-	}
-	
 	public static int findMissingNumP(int[] arr) {
 		int index = 0, missingNum = 0;
 		Arrays.sort(arr);
@@ -47,7 +40,6 @@ public class FindMissingNumber {
 		System.out.println(missingNum);
 		missingNum = findMissingNumM(nums3);
 		System.out.println(missingNum);
-		//printArr();
 	}
 
 }
