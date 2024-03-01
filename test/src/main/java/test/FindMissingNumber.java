@@ -32,7 +32,7 @@ public class FindMissingNumber {
 	}
 	
 	public static void main(String[] args) {
-		int[] nums = {1, 2, 3, 4, 5, 7};
+		int[] nums = {1, 3, 6, 8, 2, 4, 7};
 		int[] nums2 = {10, 3, 5, 4, 6, 8, 7, 9, 12, 1, 2};
 		int[] nums3 = {2, 4, 1, 8, 6, 3, 7};
 		int missingNum = findMissingNumP(nums);
