@@ -86,6 +86,14 @@ public class Java_DSA_Day1 {
 		return result;
 	}
 	
+	public static int[] resizeArray(int[] arr, int newSize) {
+		int[] result = new int[newSize];
+		for(int i = 0; i < arr.length; i++) {
+			result[i] = arr[i];
+		}
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		int[] numArr = new int[5];
 		numArr[0] = 1;
@@ -99,6 +107,8 @@ public class Java_DSA_Day1 {
 		int[] evenNumRemArr = {3, 2, 4, 7, 10, 6, 5};
 		int[] result = removeEvenInt(evenNumRemArr);
 		int[] numArr2 = {0, 1, 0, 4, 12};
+		int[] numArr3 = {8, 1, 0, 2, 1, 0, 3};
+		
 		
 		printArr(result);
 		printArr(reverseArray(new int[] {3, 2, 1, 10, 9}));
@@ -114,6 +124,10 @@ public class Java_DSA_Day1 {
 		System.out.println(findSecondMaxValue(new int[] {3, 2, 1, 10, 9}));
 		System.out.println(findSecondMaxValue(new int[] {12, 34, 2, 34, 33, 1}));
 		printArr(moveZeroToEnd(numArr2));
+		printArr(moveZeroToEnd(numArr3));
+		
+		numArr3 = resizeArray(numArr3, numArr3.length + 3);
+		printArr(numArr3);
 	}
 
 }
