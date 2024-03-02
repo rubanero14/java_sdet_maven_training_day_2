@@ -17,7 +17,8 @@ public class IsPalindromeString {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(isPalindromeStr("kayak"));
+		System.out.println(isPalindromeStr("madam"));
+		System.out.println(isPalindromeStr("that"));
 	}
 
 }
