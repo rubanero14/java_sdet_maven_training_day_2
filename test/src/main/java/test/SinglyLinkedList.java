@@ -14,8 +14,7 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	@SuppressWarnings("unused")
-	private static void PrintItemsInLinkedList(SinglyLinkedList sll){
+	private void PrintItemsInLinkedList(SinglyLinkedList sll){
 		// Printing elements of a Singly Linked List
 		ListNode current = sll.head;
 		
@@ -24,8 +23,19 @@ public class SinglyLinkedList {
 			current = current.next;
 		}	
 		System.out.print("null");
+		System.out.println();
 	}
 	
+	private void LengthOfLinkedList(SinglyLinkedList sll) {
+		ListNode current = sll.head;
+		int count = 0;
+		while(current != null) {
+			count++;
+			current = current.next;
+		}
+		System.out.println(count);
+		
+	}
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		sll.head = new ListNode(1);
@@ -38,7 +48,8 @@ public class SinglyLinkedList {
 		second.next = third; // 1 ---> 2 ---> 3
 		third.next = fourth; // 1 ---> 2 ---> 3 ---> 4 ---> null
 		
-		PrintItemsInLinkedList(sll);
+		sll.PrintItemsInLinkedList(sll);
+		sll.LengthOfLinkedList(sll);
 	}
 
 }
