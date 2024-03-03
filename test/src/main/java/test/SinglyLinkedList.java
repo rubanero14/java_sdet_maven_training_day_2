@@ -27,6 +27,10 @@ public class SinglyLinkedList {
 	}
 	
 	private void LengthOfLinkedList(SinglyLinkedList sll) {
+		if(sll == null) {
+			System.out.println(0);
+			return;
+		}
 		ListNode current = sll.head;
 		int count = 0;
 		while(current != null) {
@@ -50,6 +54,7 @@ public class SinglyLinkedList {
 		
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
+		sll.LengthOfLinkedList(null);
 	}
 
 }
