@@ -40,6 +40,13 @@ public class SinglyLinkedList {
 		System.out.println(count);
 		
 	}
+	
+	public void InsertNewNodeInLinkedList(SinglyLinkedList sll, int data) {
+		ListNode newNode = new ListNode(data);
+		newNode.next = sll.head;
+		head = newNode;
+	}
+	
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		sll.head = new ListNode(1);
@@ -52,6 +59,8 @@ public class SinglyLinkedList {
 		second.next = third; // 1 ---> 2 ---> 3
 		third.next = fourth; // 1 ---> 2 ---> 3 ---> 4 ---> null
 		
+		sll.InsertNewNodeInLinkedList(sll, 7);
+		sll.InsertNewNodeInLinkedList(sll, 10);
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
