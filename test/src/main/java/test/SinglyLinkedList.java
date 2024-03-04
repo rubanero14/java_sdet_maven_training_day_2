@@ -1,7 +1,7 @@
 package test;
 
 public class SinglyLinkedList {
-	
+	// container for first linked list
 	private ListNode head;
 	
 	private static class ListNode {
