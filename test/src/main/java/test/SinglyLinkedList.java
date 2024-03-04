@@ -1,4 +1,13 @@
 package test;
+// Components of Singly Linked List
+/* 	1. Base Class
+ * 	2. Head container instance
+ * 	3. Static constructor class with instance name same as Head type
+ * 		4. Data container instance
+ * 		5. Next container instance
+ * 		6. Constructor method with same name as Next type name with parameter for Data instance where parameter assigned to Data
+ * 		   container and null value assigned to Next container by default  
+ */
 
 public class SinglyLinkedList {
 	// container for first linked list
@@ -66,9 +75,8 @@ public class SinglyLinkedList {
 	public void InsertNewNodeInLinkedListOnIndex(SinglyLinkedList sll, int data, int index) {
 		ListNode newNode = new ListNode(data);
 		if(sll == null || index == 0) {
-			ListNode temp = sll.head;
+			newNode.next = sll.head;
 			sll.head = newNode;
-			newNode.next = temp;
 			return;
 		}
 
@@ -79,13 +87,12 @@ public class SinglyLinkedList {
 		
 		int idx = 1;
 		ListNode current = sll.head;
-		while(index != idx) {
+		while(index != idx && current.next != null) {
 			current = current.next;
 			idx++;
 		}
-		ListNode temp = current.next;
+		newNode.next = current.next;
 		current.next = newNode;
-		newNode.next = temp;
 	}
 	
 	public static void main(String[] args) {
@@ -103,7 +110,7 @@ public class SinglyLinkedList {
 		sll.InsertNewNodeInStartOfLinkedList(sll, 7);
 		sll.InsertNewNodeInStartOfLinkedList(sll, 10);
 		sll.InsertNewNodeInEndOfLinkedList(sll, 100);
-		sll.InsertNewNodeInLinkedListOnIndex(sll, 99, -1);
+		sll.InsertNewNodeInLinkedListOnIndex(sll, 99, 2);
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
