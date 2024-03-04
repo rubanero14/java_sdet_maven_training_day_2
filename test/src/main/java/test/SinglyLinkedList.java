@@ -49,15 +49,18 @@ public class SinglyLinkedList {
 	
 	public void InsertNewNodeInEndOfLinkedList(SinglyLinkedList sll, int data) {
 		ListNode newNode = new ListNode(data);
+		// if nodes inside SLL, assign new node to head node
 		if(sll.head == null) {
 			sll.head = newNode;
 			return;
-		}	
+		}
+		
 		ListNode current = sll.head;
+		// Traverse till end of Linked List where current.next value comes to null and assign the last not null value to current
 		while(current.next != null) {
 			current = current.next;
-			System.out.println(current.data);
 		}
+		// As current value currently carries the last node value of the Linked List, current.next value is null in value, hence assign it to the new node value
 		current.next = newNode;
 	}
 	
