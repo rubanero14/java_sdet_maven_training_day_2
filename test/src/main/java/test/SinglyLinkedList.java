@@ -78,7 +78,7 @@ public class SinglyLinkedList {
 		
 		sll.InsertNewNodeInStartOfLinkedList(sll, 7);
 		sll.InsertNewNodeInStartOfLinkedList(sll, 10);
-		sll.InsertNewNodeInEndOfLinkedList(sll, -10);
+		sll.InsertNewNodeInEndOfLinkedList(sll, 100);
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
