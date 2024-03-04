@@ -54,7 +54,6 @@ public class SinglyLinkedList {
 			sll.head = newNode;
 			return;
 		}
-		
 		ListNode current = sll.head;
 		// Traverse till end of Linked List where current.next value comes to null and assign the last not null value to current
 		while(current.next != null) {
@@ -62,6 +61,31 @@ public class SinglyLinkedList {
 		}
 		// As current value currently carries the last node value of the Linked List, current.next value is null in value, hence assign it to the new node value
 		current.next = newNode;
+	}
+	
+	public void InsertNewNodeInLinkedListOnIndex(SinglyLinkedList sll, int data, int index) {
+		ListNode newNode = new ListNode(data);
+		if(sll == null || index == 0) {
+			ListNode temp = sll.head;
+			sll.head = newNode;
+			newNode.next = temp;
+			return;
+		}
+
+		if(index < 0) {
+			sll.InsertNewNodeInEndOfLinkedList(sll, data);
+			return;
+		}
+		
+		int idx = 1;
+		ListNode current = sll.head;
+		while(index != idx) {
+			current = current.next;
+			idx++;
+		}
+		ListNode temp = current.next;
+		current.next = newNode;
+		newNode.next = temp;
 	}
 	
 	public static void main(String[] args) {
@@ -79,6 +103,7 @@ public class SinglyLinkedList {
 		sll.InsertNewNodeInStartOfLinkedList(sll, 7);
 		sll.InsertNewNodeInStartOfLinkedList(sll, 10);
 		sll.InsertNewNodeInEndOfLinkedList(sll, 100);
+		sll.InsertNewNodeInLinkedListOnIndex(sll, 99, -1);
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
