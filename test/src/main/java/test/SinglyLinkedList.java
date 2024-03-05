@@ -96,10 +96,7 @@ public class SinglyLinkedList {
 	}
 	
 	public void DeleteFirstNodeInLinkedList(SinglyLinkedList sll) {
-		if(sll.head == null) {
-			return;
-		}
-		sll.head = sll.head.next;
+		sll.head = sll.head == null ? null : sll.head.next;
 	}
 	
 	public static void main(String[] args) {
