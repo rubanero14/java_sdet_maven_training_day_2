@@ -100,14 +100,17 @@ public class SinglyLinkedList {
 	}
 	
 	public void DeleteLastNodeInLinkedList(SinglyLinkedList sll) {
+		if(sll.head == null || sll.head.next == null) {
+			sll.head = null;
+			return;
+		}
 		ListNode current = sll.head;
 		ListNode prev = sll.head;
 		while(current.next != null) {
 			prev = current;
 			current = current.next;
 		}
-		ListNode newLastNode = prev;
-		newLastNode.next = null;	
+		prev.next = null;	
 	}
 	
 	public static void main(String[] args) {
