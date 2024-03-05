@@ -99,6 +99,17 @@ public class SinglyLinkedList {
 		sll.head = sll.head == null ? null : sll.head.next;
 	}
 	
+	public void DeleteLastNodeInLinkedList(SinglyLinkedList sll) {
+		ListNode current = sll.head;
+		ListNode prev = sll.head;
+		while(current.next != null) {
+			prev = current;
+			current = current.next;
+		}
+		ListNode newLastNode = prev;
+		newLastNode.next = null;	
+	}
+	
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		sll.head = new ListNode(1);
@@ -117,6 +128,7 @@ public class SinglyLinkedList {
 		sll.InsertNewNodeInLinkedListOnIndex(sll, 99, 2);
 		sll.InsertNewNodeInLinkedListOnIndex(sll, 98, 2);
 		sll.DeleteFirstNodeInLinkedList(sll);
+		sll.DeleteLastNodeInLinkedList(sll);
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
