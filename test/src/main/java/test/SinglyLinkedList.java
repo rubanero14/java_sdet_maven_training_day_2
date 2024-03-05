@@ -14,7 +14,7 @@ public class SinglyLinkedList {
 	private ListNode head;
 	
 	private static class ListNode {
-		private int data; // Generic Type
+		private int data; // Can be any Generic Type
 		private ListNode next; 
 		// Constructor class for Singly Linked List
 		public ListNode(int data) {
