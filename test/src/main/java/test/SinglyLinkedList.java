@@ -131,6 +131,39 @@ public class SinglyLinkedList {
 		previous.next = after;
 	}
 	
+	public static String PostFixer(int count) {
+		switch(count) {
+			case 1:
+				return "st";
+			case 2: 
+				return "nd";
+			case 3: 
+				return "rd";
+			default: 
+				return "th";
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	public void SearchGivenElementInLinkedList(SinglyLinkedList sll, int data) {
+		if(sll.head == null) {
+			System.out.println("Linked List holds no values");
+			return;
+		} else {
+			ListNode current = sll.head;
+			int count = 1;
+			while(current.next != null) {
+				if(current.data == data) {
+					System.out.println(data + " was searched and found at " + count + PostFixer(count)  + " node of the linked list");
+					return;
+				}
+				current = current.next;
+				count++;
+			}
+			System.out.println(data + " not found!");
+		}
+	}
+	
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		sll.head = new ListNode(1);
@@ -155,6 +188,7 @@ public class SinglyLinkedList {
 		sll.PrintItemsInLinkedList(sll);
 		sll.LengthOfLinkedList(sll);
 		sll.LengthOfLinkedList(null);
+		sll.SearchGivenElementInLinkedList(sll, 2);
 	}
 
 }
